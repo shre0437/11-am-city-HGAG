@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoption Application | Pet Adoption Website</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="application.html" class="logo-placeholder">Logo</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="application.html">Home</a>
+        <a href="#">Pets</a>
+        <a href="#">About</a>
+        <button type="button" id="adminAccessBtn" class="btn-admin-access">Admin</button>
+        <a href="application.html" class="btn-adopt">Adopt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="form-hero">
+    <h1 class="form-hero__title">Adoption Application</h1>
+    <p class="form-hero__lead">Complete this form to start the adoption process</p>
+    <span class="form-hero__sub" aria-hidden="true"></span>
+  </section>
+
+  <main class="form-page">
+    <div id="formMessage" class="form-message" role="alert"></div>
+
+    <form id="adoptionForm" class="form-container" novalidate>
+
+      <section class="form-section" aria-labelledby="section-personal">
+        <h2 id="section-personal" class="section-heading">Personal Information</h2>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label" for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Input field" required>
+            <span class="field-error">First name is required</span>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Input field" required>
+            <span class="field-error">Last name is required</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Input field" required>
+          <span class="field-error">Please enter a valid email</span>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Input field" required>
+          <span class="field-error">Phone number is required</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label" for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Input field" required>
+            <span class="field-error">City is required</span>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="state">State</label>
+            <select id="state" name="state" required>
+              <option value="">Dropdown</option>
+              <option value="SA">South Australia</option>
+              <option value="NSW">New South Wales</option>
+              <option value="VIC">Victoria</option>
+              <option value="QLD">Queensland</option>
+              <option value="WA">Western Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="NT">Northern Territory</option>
+              <option value="ACT">Australian Capital Territory</option>
+            </select>
+            <span class="field-error">Please select a state</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="section-living">
+        <h2 id="section-living" class="section-heading">Living Situation</h2>
+
+        <div class="field-group">
+          <span class="field-label">Housing Type</span>
+          <div class="option-list option-list--inline" role="radiogroup" aria-label="Housing type">
+            <label class="option-item">
+              <input type="radio" name="housingType" value="house" required>
+              <span class="option-label">House</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="housingType" value="apartment">
+              <span class="option-label">Apartment</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="housingType" value="other">
+              <span class="option-label">Other</span>
+            </label>
+          </div>
+          <span class="field-error">Please select a housing type</span>
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Do you own or rent?</span>
+          <div class="option-list">
+            <label class="option-item">
+              <input type="checkbox" name="ownership" value="own" id="ownershipOwn">
+              <span class="option-label">Own</span>
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="ownership" value="rent" id="ownershipRent">
+              <span class="option-label">Rent</span>
+            </label>
+          </div>
+          <span class="field-error">Please select own or rent</span>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="section-experience">
+        <h2 id="section-experience" class="section-heading">Pet Experience</h2>
+
+        <div class="field-group">
+          <label class="field-label" for="previousOwnership">Previous pet ownership</label>
+          <textarea id="previousOwnership" name="previousOwnership" placeholder="Text area"></textarea>
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Do you currently have other pets?</span>
+          <div class="option-list">
+            <label class="option-item">
+              <input type="checkbox" name="hasOtherPets" value="yes" id="otherPetsYes">
+              <span class="option-label">Yes</span>
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="hasOtherPets" value="no" id="otherPetsNo">
+              <span class="option-label">No</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="section-additional">
+        <h2 id="section-additional" class="section-heading">Additional Information</h2>
+
+        <div class="field-group">
+          <label class="field-label" for="adoptionReason">Why do you want to adopt this pet?</label>
+          <textarea id="adoptionReason" name="adoptionReason" placeholder="Text area" required></textarea>
+          <span class="field-error">This field is required</span>
+        </div>
+      </section>
+
+      <div class="terms-box">
+        <label class="option-item">
+          <input type="checkbox" id="termsAgreed" name="termsAgreed" required>
+          <span class="option-label">I agree to the terms and conditions</span>
+        </label>
+        <span class="terms-placeholder" aria-hidden="true"></span>
+        <span class="field-error">You must agree to the terms and conditions</span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit Application</button>
+        <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/application.js"></script>
+  <script>
+    document.getElementById('adminAccessBtn').addEventListener('click', function () {
+      Auth.goToAdmin();
+    });
+  </script>
+</body>
+</html>
